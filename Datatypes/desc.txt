@@ -1,0 +1,19 @@
+This file contains the description of basics in C programming "Datatypes"
+Data type are keywords which specify the size of variables and its characteristics. Containers in memory.
+Types of datatypes
+1. Primitive
+	a. char
+	b. int
+	c. float
+	d. double
+	e. void
+2. Derived
+	a. array
+	b. function
+	b. pointer
+	c. reference
+2. User-Defined
+	a. structure
+	b. union
+	c. enum
+	d. typedef
