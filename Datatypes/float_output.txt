@@ -1,0 +1,21 @@
+Enter a floating point number:
+1
+1.000000
+2
+2.000000
+3
+3.000000e+00
+4
+4.000000E+00
+5
+5
+6
+6
+Size of float: 4
+Address 0x7ffdd20315c0
+Range of float
+positive	1.175494e-38 to 3.402823e+38
+negative	-1.175494e-38 to -3.402823e+38
+Range of float 0.000000 to 340282346638528859811704183484516925440.000000
+Range of float 1.17549e-38 to 3.40282e+38
+Range of float 1.175494E-38 to 3.402823E+38

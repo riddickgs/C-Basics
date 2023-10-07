@@ -1,0 +1,20 @@
+Enter a number:
+1
+1
+2
+2
+3
+3
+999
+3
+999
+ABDC
+ABDC
+123 1234567
+123 1234567
+Size of integer:
+	[a] 4 [i] 4 [b] 4
+Address 0x7ffec1d3eb3c
+Range of int 
+signed		[-2147483648 to 2147483647]
+unsigned	[0 to 4294967295]

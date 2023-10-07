@@ -1,19 +1,36 @@
-This file contains the description of basics in C programming "Datatypes"
-Data type are keywords which specify the size of variables and its characteristics. Containers in memory.
+#This file contains the description of basics in C programming "Datatypes"
+
+Data Type are keywords which specify the size of variables and its characteristics.
+By providing datatype to identifiers user create containers in memory to store data
+and later operate on it. Based on datatype memory will be reserved by compiler.
+
 Types of datatypes
-1. Primitive
+1. Primitive (Basic(built-in) containers)
 	a. char
 	b. int
 	c. float
 	d. double
 	e. void
-2. Derived
+2. Derived (Assemblage of built-in datatype)
 	a. array
 	b. function
 	b. pointer
 	c. reference
-2. User-Defined
+2. User-Defined (Customization of built-in datatypes)
 	a. structure
 	b. union
 	c. enum
 	d. typedef
+
+Q. How to declare datatype?
+Q. What is the use of datatype?
+Q. How to input using that datatype?
+Q. How to get size and address of that datatype?
+
+All answers will be covered on individual datatype file on current directory.
+Data types can be used as
+  Variables - Name of the variable are called identifiers
+  Function return type
+  Array type
+  Union Members
+  Structure members

@@ -1,0 +1,12 @@
+Enter a character:
+R
+R
+Size [a] 1
+Size [b] 1
+Size [c] 1
+Size [d] 1
+Size [e] 1
+Address 0x7fff9c8bac57
+Range of char
+signed		[-128 to 127]
+unsigned	[0 to 255]

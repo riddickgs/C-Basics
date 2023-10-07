@@ -1,29 +1,106 @@
-/* File 	char.c
-   Purpose	character input
-   Author	Riddick
-   Modify	Riddick@Thu Oct  5 14:59:00 EDT 2023
-*/
-#include <stdio.h>
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * File 	char.c
+ * Author	Riddick
+ * Modify	Riddick|Thu Oct  5 14:59:00 EDT 2023
+ * Desc		This file contains character type input/output
+ * Notes	char includes all ASCII characters inputs
+ * Below is ASCII Table [Dec - Decimal, char - character]
 
-/* Mandatory function main with return type 'int'*/
+Dec  Char                           Dec  Char     Dec  Char     Dec  Char
+---------                           ---------     ---------     ----------
+  0  NUL (null)                      32  SPACE     64  @         96  `
+  1  SOH (start of heading)          33  !         65  A         97  a
+  2  STX (start of text)             34  "         66  B         98  b
+  3  ETX (end of text)               35  #         67  C         99  c
+  4  EOT (end of transmission)       36  $         68  D        100  d
+  5  ENQ (enquiry)                   37  %         69  E        101  e
+  6  ACK (acknowledge)               38  &         70  F        102  f
+  7  BEL (bell)                      39  '         71  G        103  g
+  8  BS  (backspace)                 40  (         72  H        104  h
+  9  TAB (horizontal tab)            41  )         73  I        105  i
+ 10  LF  (NL line feed, new line)    42  *         74  J        106  j
+ 11  VT  (vertical tab)              43  +         75  K        107  k
+ 12  FF  (NP form feed, new page)    44  ,         76  L        108  l
+ 13  CR  (carriage return)           45  -         77  M        109  m
+ 14  SO  (shift out)                 46  .         78  N        110  n
+ 15  SI  (shift in)                  47  /         79  O        111  o
+ 16  DLE (data link escape)          48  0         80  P        112  p
+ 17  DC1 (device control 1)          49  1         81  Q        113  q
+ 18  DC2 (device control 2)          50  2         82  R        114  r
+ 19  DC3 (device control 3)          51  3         83  S        115  s
+ 20  DC4 (device control 4)          52  4         84  T        116  t
+ 21  NAK (negative acknowledge)      53  5         85  U        117  u
+ 22  SYN (synchronous idle)          54  6         86  V        118  v
+ 23  ETB (end of trans. block)       55  7         87  W        119  w
+ 24  CAN (cancel)                    56  8         88  X        120  x
+ 25  EM  (end of medium)             57  9         89  Y        121  y
+ 26  SUB (substitute)                58  :         90  Z        122  z
+ 27  ESC (escape)                    59  ;         91  [        123  {
+ 28  FS  (file separator)            60  <         92  \        124  |
+ 29  GS  (group separator)           61  =         93  ]        125  }
+ 30  RS  (record separator)          62  >         94  ^        126  ~
+ 31  US  (unit separator)            63  ?         95  _        127  DEL
+ 
+ * character type decimal range mentioned below
+ * signed 	-128 to 127
+ * unsigned	0 to 255
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#include <stdio.h> // Header file
+#include <limits.h>
+
+/* Mandatory function main | return type 'int' */
 int main() {
-  /*Take a character variable*/
-  char a;
+  /*Declare character variable*/
+  char a, b, c, d, e;
+  unsigned char u;
 
   printf("Enter a character:\n");
 
-  /*Input the character data*/
-  scanf("%c", &a);
+  /*Input the character data using scanf*/
+  scanf("%c", &a);	//where %c is format specifier requires address of char type
 
   /*Print the character data*/
   printf("%c\n", a);
 
+#if 0
+  /*Input the character data using getchar*/
+  b = getchar();	//getchar returns integer
+
+  /*Print the character data*/
+  printf("%c\n", b);
+
+  /*Input the character data using fgetc*/
+  c = fgetc(stdin);	//fgetc where stdin is file pointer
+
+  /*Print the character data*/
+  printf("%c\n", c);
+
+  /*Input the character data using getc*/
+  d = getc(stdin);	//getc
+
+  /*Print the character data*/
+  printf("%c\n", d);
+
+  /*Input the character data using ungetc*/
+  u = ungetc(e, stdin);	//ungetc where input e (signed char) will be pushed back
+
+  /*Print the character data*/
+  printf("%c %lc\n", e, u);
+#endif
+
   /*size of character variable*/
-  printf("Size %ld\n", sizeof(a));
+  printf("Size [a] %ld\n", sizeof(a));
+  printf("Size [b] %ld\n", sizeof(b));
+  printf("Size [c] %ld\n", sizeof(c));
+  printf("Size [d] %ld\n", sizeof(d));
+  printf("Size [e] %ld\n", sizeof(c));
 
   /*Address of the character variable*/
   printf("Address %p\n", &a);
 
-  /*Return type int so returned 0 on success*/
+  printf("Range of char\nsigned\t\t[%d to %d]\nunsigned\t[0 to %d]\n",
+	 CHAR_MIN, CHAR_MAX, UCHAR_MAX);
+  /*returns 0 on success*/
   return 0;
 }
