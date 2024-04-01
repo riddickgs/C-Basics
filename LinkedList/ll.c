@@ -1,0 +1,70 @@
+/* Find middle element of a single linked list in one pass */
+#include "list.h"
+
+int main() {
+  List *head = NULL;
+  getSampleList(&head, 6);
+  display(head);
+  printf("Length of list %d\n", lengthList(head));
+  middleList(head);
+  display(head);
+  printf("reverse List\n");
+  reverseList(&head);
+  display(head);
+  printf("reverse List\n");
+  reverseList(&head);
+  display(head);
+  middleList(head);
+  printf("Length of list %d\n", lengthList(head));
+  printf("Creating a cycle in linked list\n");
+  display(head);
+  separateEvenOddElements(&head);
+  display(head);
+  printf("Sorted Nodes of List\n");
+  MergeSort(&head);
+  display(head);
+  head->next->next->next->next->next->next = head->next;
+  printf("Cycle %s\n", isCyclePresent(head)?"Present":"Absent");
+  head->next->next->next->next->next->next = NULL;
+  //removeFromList(&head, END);
+  printf("Swap nodes pairwise\n");
+  swapPairWise(&head);
+  display(head);
+  printf("find nth node from last\n");
+  findNthFromEnd(head, 5);
+  display(head);
+  printf("Move last node to first\n");
+  moveLastToFirst(&head);
+  display(head);
+  printf("Delete alternate nodes\n");
+  deleteAltNodes(head);
+  display(head);
+  destroy(&head);
+  addToListAtBegin(&head, 1);
+  addToListAtEnd(&head, 2);
+  addToListAtEnd(&head, 2);
+  addToListAtEnd(&head, 1);
+  display(head);
+  printf("Palindrome %s\n", isListPalindrome(head)?"True":"False");
+  display(head);
+  separateEvenOddElements(&head);
+  display(head);
+  destroy(&head);
+  getSortedSampleList(&head, 4);
+  display(head);
+  List *head2 = NULL;
+  getSortedSampleList(&head2, 3);
+  display(head2);
+  mergeSortedList(&head, head2);
+  display(head);
+  destroy(&head);
+
+  printf("Enter two numbers to add!\n");
+  getSum();
+  head = NULL;
+  head = getDecimalToBinary(6);
+  display(head);
+  printf("Decimal Number %d\n", getBinaryToDecimal(head));
+  destroy(&head);
+  return 0;
+}
