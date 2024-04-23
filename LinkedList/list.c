@@ -331,11 +331,14 @@ extern void swapPairWise(List **head) {
 
 /* find if cycle is present in linked list. get the started node */
 extern int isCyclePresent(List *head) {
-  List *s = head->next, *f=head->next->next;
-  while (s && f && f->next) {
+  List *s = head, *f=head;
+  while (f && f->next) {
+    f = f->next;
+    if (f->next) {
+      s = s->next;
+      f = f->next;
+    }
     if (s == f) break;
-    s = s->next;
-    f = f->next->next;
   }
   /* find the starting node if cycle present */
   if (s != f)
@@ -482,9 +485,9 @@ extern void getSum() {
   }
 
   if (t1)
-    addToListAtBegin(&l3, t1->data);
+    addToListAtBegin(&l3, t1->data+num/10);
   else if(t2)
-    addToListAtBegin(&l3, t2->data);
+    addToListAtBegin(&l3, t2->data+num/10);
   else if (num/10)
     addToListAtBegin(&l3, num/10);
   printf("Sum of two numbers are:\t");
