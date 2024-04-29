@@ -1,16 +1,25 @@
 #include <stdio.h>
-
+/* Algo:
+ * if last bit is set then multiply number by result
+ * Save number multiply by itself in number
+ * do right shift of exponent on every iterations*/
 int power(int a, int b) {
-  if (!b) return 1;
-  if (!a) return 0;
 
+  long ans = 1, lastbit;
   //product of 'a' 'b' times
   //0b11 ^ 0b100  = 0b1010001
-  printf("%d", 1 <<2);
-
+  //0b11 ^ 0b11 = 0b11011
+  while (b > 0) {
+    lastbit = (b & 1);
+    if (lastbit) ans = ans * a;
+    a = a * a;
+    b >>= 1;
+  }
+  return ans;
 }
 
 int main() {
-  printf("%d", power(a, b));
+  int a  = 3, b = 3;
+  printf("%d\n", power(a, b));
   return 0;
 }
