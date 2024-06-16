@@ -5,7 +5,7 @@
 unsigned char countSetBits(unsigned int v) {
   unsigned int p;
 #ifdef LOOKUP //Using lookup table
-  static const int lookuptable256[] = {
+  static const unsigned char lookuptable256[] = {
 #define B2(n) n, n+1, n+1, n+2
 #define B4(n) B2(n), B2(n+1), B2(n+1), B2(n+2)
 #define B6(n) B4(n), B4(n+1), B4(n+1), B4(n+2)
