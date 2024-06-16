@@ -7,3 +7,5 @@ union <tag> {
   .
   typeN memberN;
 } <variable name>;
+
+Note: Annonymous union are union without tag
