@@ -57,11 +57,11 @@ node* reverse(node* head){
 }
 
 
-int main(){
+int main() {
     node* head = NULL;
     int data[] = {1,2,3};                      
     int size = sizeof(data) / sizeof(data[0]);
     head = createlist(head,data,size);
     print(reverse(head));
-
+    return 0;
 }

@@ -2,6 +2,7 @@
  * writer threads will take input from external sources
  * likely drivers (serialized) and write to a shared buffer
  * reader threads process it to the application
+ * Process became autonomous/asynchronous
  * */
 
 #include <stdio.h>
