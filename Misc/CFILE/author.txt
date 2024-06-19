@@ -1,0 +1,4 @@
+This course is all about Linux system programming. The instructor of this course is Mohan.New fd is (1)
+Exiting the program
+New fd is (1)
+Exiting the program

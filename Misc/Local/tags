@@ -1,0 +1,52 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CFLAGS	makefile	/^CFLAGS= -Wall -g -std=c99 -Werror -pthread $(LIBS)$/;"	m
+CROSSTOOL	makefile	/^CROSSTOOL=$/;"	m
+FIRSTMSG	client.c	5;"	d	file:
+GCC	makefile	/^GCC=$(CROSSTOOL)gcc$/;"	m
+LIBS	makefile	/^LIBS= -lrt$/;"	m
+LOCALADDR	utils.h	12;"	d
+MAX	count.c	5;"	d	file:
+PORT	utils.h	13;"	d
+RAW	client.c	/^   RAW$/;"	e	enum:__anon1	file:
+SERVADDR	utils.h	14;"	d
+TARGETS	makefile	/^TARGETS= call_thread one_thread count$/;"	m
+TCP	client.c	/^   TCP,$/;"	e	enum:__anon1	file:
+THREADS	count.c	6;"	d	file:
+UDP	client.c	/^   UDP,$/;"	e	enum:__anon1	file:
+USAGE	call_thread.c	5;"	d	file:
+USAGE	one_thread.c	5;"	d	file:
+_UTILS_H	utils.h	2;"	d
+acceptConn	utils.c	/^extern int acceptConn(int sockfd)$/;"	f
+age	container.c	/^  int age;$/;"	m	struct:me	file:
+color	container.c	/^  char color;$/;"	m	struct:me	file:
+connectServer	utils.c	/^extern const int connectServer(const int sockfd, const char *servaddr, const unsigned short port)$/;"	f
+containerof	container.c	4;"	d	file:
+cou	call_thread.c	/^struct cou {$/;"	s	file:
+cou	one_thread.c	/^struct cou {$/;"	s	file:
+counting_func	count.c	/^void counting_func(int offset)$/;"	f
+counting_thread	count.c	/^void *counting_thread(void *offset_ptr)$/;"	f
+empid	container.c	/^  int empid;$/;"	m	struct:me	file:
+getSocket	utils.c	/^extern const int getSocket(const int domain, const int type,$/;"	f
+lim	call_thread.c	/^   long long lim;$/;"	m	struct:cou	file:
+lim	one_thread.c	/^   long long lim;$/;"	m	struct:cou	file:
+listenConn	utils.c	/^extern int listenConn(int sockfd, int backlog)$/;"	f
+main	call_thread.c	/^int main(int argc, char *argv[])$/;"	f
+main	client.c	/^int main()$/;"	f
+main	container.c	/^int main() {$/;"	f
+main	count.c	/^int main()$/;"	f
+main	one_thread.c	/^int main(int argc, char *argv[])$/;"	f
+main	server.c	/^int main() {$/;"	f
+me	container.c	/^struct me {$/;"	s	file:
+mt	count.c	/^pthread_mutex_t mt = PTHREAD_MUTEX_INITIALIZER;$/;"	v
+name	container.c	/^  char name[20];$/;"	m	struct:me	file:
+sum	call_thread.c	/^   long long sum;$/;"	m	struct:cou	file:
+sum	count.c	/^long long sum = 0;$/;"	v
+sum	one_thread.c	/^   long long sum;$/;"	m	struct:cou	file:
+thread_func	call_thread.c	/^void *thread_func(void *args)$/;"	f
+thread_func	one_thread.c	/^void *thread_func(void *args)$/;"	f
+weight	container.c	/^  float weight;$/;"	m	struct:me	file:

@@ -1,0 +1,167 @@
+/* STACK - LIFO 
+ * \Author: 		Riddick
+ * \Description:	This is sample stack code
+ * \Date		Thu Mar 21 13:15:01 IST 2024
+ * 
+ * Extras:
+ * Stack using Array
+ * Stack using Linked list 
+ * */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+#define CAPACITY 100
+typedef struct {
+  int top;
+  unsigned int capacity;
+  int *array;
+} STACK;
+
+typedef struct stackll {
+  int data;
+  struct stackll *next;
+} Stack;
+
+//create memory of stack
+STACK *create_stack(unsigned int cap) {
+  STACK *st = (STACK *)malloc(sizeof(STACK));
+  st->capacity = cap;
+  st->top = -1;
+  st->array = (int *)malloc(st->capacity * sizeof(int));
+  return st;
+}
+
+Stack *getNode(int item) {
+  Stack *st = (Stack *)malloc(sizeof(Stack));
+  st->data = item;
+  st->next = NULL;
+  return st;
+}
+//isEmpty
+int isEmpty(STACK *st) {
+  return st->top == -1;
+}
+
+int isEmptyll(Stack *st) {
+  return !st;
+}
+//isFull
+int isFull(STACK *st) {
+  return st->top == st->capacity-1;
+}
+
+//push
+void push(STACK *st, int item) {
+  if (isFull(st)) return;
+  printf("Pushed to stack (%d)\n", item);
+  st->array[++st->top] = item;
+}
+
+void pushll(Stack **st, int item) {
+  //get node
+  Stack *new = getNode(item);
+  printf("Pushed to stack (%d)\n", item);
+  new->next = *st; //add at head
+  *st = new;
+}
+
+//pop
+int pop(STACK *st) {
+  if (isEmpty(st)) return INT_MIN;
+  printf("Popped from stack (%d)\n", st->array[st->top]);
+  return st->array[st->top--];
+}
+
+int popll(Stack **st) {
+  if (isEmptyll(*st)) return INT_MIN;
+  Stack *temp = *st;
+  int popp = temp->data;
+  printf("Popped from stack (%d)\n", popp);
+  *st = (*st)->next;
+  free(temp);
+  return popp;
+}
+//peek
+int peek(STACK *st) {
+	printf("Top of the stack (%d)\n", st->array[st->top]);
+  return st->array[st->top];
+}
+
+int peekll(Stack *st) {
+  printf("Top of the stack (%d)\n", st->data);
+  return st->data;
+}
+
+//display whole stack
+void display(STACK *st) {
+  printf("Members in stack\t[ ");
+  for (int i = 0; i <= st->top; i++) {
+    printf("%d ", st->array[i]);
+  }
+  printf("]\n");
+}
+
+void displayll(Stack *st) {
+  printf("Members in stack\t[ ");
+  Stack *temp = st;
+  while (temp) {
+    printf("%d ", temp->data);
+    temp = temp->next;
+  }
+  printf("]\n");
+}
+//release memory of stack
+void destroy_stack(STACK **st) {
+  free((*st)->array);
+  free(*st);
+}
+
+void destroy_stackll(Stack **st) {
+  Stack *temp = (*st)->next, *fr;
+  while (temp->next) {
+    fr = temp;
+    temp = temp->next;
+    //fr->next = NULL;
+    free(fr);
+  }
+  free(*st);
+}
+
+int main() {
+#ifdef STACK_USING_ARRAY
+  printf("Stack using Array\n");
+  STACK *st;
+  st = create_stack(CAPACITY);
+  push(st, 10);
+  push(st, 20);
+  push(st, 31);
+  push(st, 32);
+  push(st, 40);
+  push(st, 2);
+  push(st, 21);
+  push(st, 60);
+  push(st, 33);
+  pop(st);
+  peek(st);
+  display(st);
+  destroy_stack(&st);
+#else
+  printf("Stack using linked list\n");
+  Stack *st = NULL;
+  pushll(&st, 10);
+  pushll(&st, 20);
+  pushll(&st, 31);
+  pushll(&st, 32);
+  pushll(&st, 40);
+  pushll(&st, 2);
+  pushll(&st, 21);
+  pushll(&st, 60);
+  popll(&st);
+  peekll(st);
+  displayll(st);
+  destroy_stackll(&st);
+#endif
+  return 0;
+}
